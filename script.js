@@ -12,14 +12,29 @@ const player1El = document.querySelector('.player--1')
 const current0El = document.getElementById('current--0')
 const current1El = document.getElementById('current--1')
 
-// Starting conditions
-score0El.textContent = 0
-score1El.textContent = 0
-
 const scores = [0, 0]
-let currentScore = 0
-let activePlayer = 0
-let gameOn = true
+let gameOn, currentScore, activePlayer
+
+const init = function () {
+    // Starting conditions
+    score0El.textContent = 0
+    score1El.textContent = 0
+    current0El.textContent = 0
+    current1El.textContent = 0
+
+    scores[0] = 0
+    scores[1] = 0
+    currentScore = 0
+    gameOn = true
+    activePlayer = 0
+
+    diceEl.classList.add('hidden')
+    player0El.classList.remove('player--winner')
+    player1El.classList.remove('player--winner')
+    player0El.classList.remove('player--active')
+    player1El.classList.remove('player--active')
+    player0El.classList.add('player--active')
+}
 
 const switchPlayers = function () {
     currentScore = 0
@@ -28,7 +43,7 @@ const switchPlayers = function () {
     player1El.classList.toggle('player--active')
 }
 
-diceEl.classList.add('hidden')
+init()
 
 // Rolling dice functionality
 btnRoll.addEventListener('click', ev => {
@@ -64,7 +79,7 @@ btnHold.addEventListener('click', ev => {
         // 2. Reset current score
         document.getElementById(`current--${activePlayer}`).textContent = 0
         // 3. If total score below 100 Switch players
-        if (scores[activePlayer] < 20) {
+        if (scores[activePlayer] < 100) {
             switchPlayers()
         } else {
             // finish the game
@@ -78,4 +93,9 @@ btnHold.addEventListener('click', ev => {
             diceEl.classList.add('hidden')
         }
     }
+})
+
+// Reset game
+btnNew.addEventListener('click', ev => {
+    init()
 })
