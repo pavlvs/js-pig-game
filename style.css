@@ -13,7 +13,7 @@ html {
 
 body {
     align-items: center;
-    background-image: linear-gradient(to top left, #753682, #bf2e34 100%);
+    background-image: linear-gradient(to top left, #242424, #2e2d2d 100%);
     color: #333;
     display: flex;
     font-family: 'Nunito', sans-serif;
@@ -25,9 +25,9 @@ body {
 /* LAYOUT */
 main {
     backdrop-filter: blur(200px);
-    background-color: rgba(255,255,255, 0.35);
+    background-color: rgba(255, 255, 255, 0.35);
     border-radius: 9px;
-    box-shadow: 0 3rem 5rem rgba(255,255,255, 0.25);
+    box-shadow: 0.9rem 0.9rem 2rem rgba(255, 255, 255, 0.2);
     display: flex;
     filter: blur();
     height: 60rem;
@@ -57,7 +57,7 @@ main {
 }
 
 .score {
-    color: #c7365f;
+    color: #aa0202;
     font-size: 8rem;
     font-weight: 300;
     margin-bottom: auto;
@@ -80,7 +80,7 @@ main {
 }
 
 .current {
-    background-color: #cf365f;
+    background-color: #464646;
     border-radius: 9px;
     color: #fff;
     opacity: 0.8;
@@ -142,7 +142,7 @@ main {
 }
 
 .btn:active {
-    box-shadow: 0 1rem 2rem rgba(255,255,255, 0.15);
+    box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.15);
     transform: translate(-50%, 3px);
 }
 
@@ -164,7 +164,7 @@ main {
 }
 
 .player--winner .name {
-    color: #c7365f;
+    color: #ffffff;
     font-weight: 700;
 }
 
